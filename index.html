@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2d211a"><meta name="description" content="오래 간직하고 싶은 장면을 모으는 나만의 빈티지 사진첩">
+<title>서랍 속 사진첩</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='10' width='48' height='44' rx='4' fill='%23e8ddc5' stroke='%232d211a' stroke-width='4'/%3E%3Crect x='15' y='17' width='34' height='24' fill='%23768163'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css"></head><body>
+<header class="site-header"><a class="wordmark" href="#top"><span></span>서랍 속 사진첩</a><p>기억은 사진보다 천천히 빛바랜다.</p><button class="header-add" type="button" data-open-upload>사진 넣기</button></header>
+<main id="top" class="album-shell">
+<aside class="album-spine" aria-label="사진첩 정보"><span>1986—1994</span><strong>OUR DAYS</strong><span>VOL. 01</span></aside>
+<section class="album-page"><div class="binding" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<header class="page-heading"><div><p class="eyebrow">PERSONAL ARCHIVE · VOL. 01</p><h1>다시 꺼내 보는 날들</h1><p class="intro">오래 기억하고 싶은 장면과 그날의 마음을 한 장씩 모아두세요.</p></div><div class="album-count"><strong id="photoCount">03</strong><span>PHOTOGRAPHS</span></div></header>
+<div class="toolbar"><label class="search-field"><span>사진 찾기</span><input id="searchInput" type="search" placeholder="제목, 장소, 메모"></label><div class="filters" role="group" aria-label="사진 필터"><button class="filter active" data-filter="all">모든 사진</button><button class="filter" data-filter="favorite">아끼는 사진</button></div><button class="primary-button" type="button" data-open-upload>새 사진</button></div>
+<div id="gallery" class="photo-grid" aria-live="polite"></div>
+<div id="emptyState" class="empty-state" hidden><span></span><h2>아직 붙여둔 사진이 없어요</h2><p>첫 장면을 골라 사진첩을 시작해 보세요.</p><button class="text-button" data-open-upload>사진 고르기</button></div>
+<footer class="page-footer"><span id="footerNote"></span><span>PAGE 01</span></footer></section></main>
+<dialog id="photoDialog"><form method="dialog" class="dialog-frame"><button class="dialog-close" value="cancel">닫기</button><div class="dialog-image-wrap"><img id="dialogImage" alt=""></div><div class="dialog-copy"><p id="dialogDate" class="dialog-date"></p><h2 id="dialogTitle"></h2><p id="dialogPlace" class="dialog-place"></p><p id="dialogMemo" class="dialog-memo"></p><div class="dialog-actions"><button id="favoriteButton" class="text-button" type="button"></button><button id="deleteButton" class="delete-button" type="button">사진 떼어내기</button></div></div></form></dialog>
+<dialog id="uploadDialog" class="upload-dialog"><form id="uploadForm" class="upload-form"><div class="upload-heading"><div><p class="eyebrow">ADD A MEMORY</p><h2>새 사진 붙이기</h2></div><button class="dialog-close static" type="button" data-close-upload>닫기</button></div>
+<label id="dropZone" class="drop-zone"><input id="photoInput" type="file" accept="image/*" required><img id="uploadPreview" alt="선택한 사진 미리보기" hidden><span id="dropCopy"><strong>사진을 이곳에 놓거나 눌러서 고르세요</strong><small>JPG, PNG, WEBP · 사진은 이 브라우저에만 저장됩니다.</small></span></label>
+<div class="form-grid"><label><span>사진 제목</span><input id="titleInput" maxlength="40" placeholder="예: 봄날의 소풍" required></label><label><span>날짜</span><input id="dateInput" type="date"></label><label class="wide"><span>장소</span><input id="placeInput" maxlength="40" placeholder="예: 한강 둔치"></label><label class="wide"><span>그날의 메모</span><textarea id="memoInput" maxlength="160" placeholder="사진 뒤에 적어두고 싶은 이야기를 남겨보세요."></textarea></label></div>
+<div class="upload-actions"><button class="secondary-button" type="button" data-close-upload>취소</button><button class="primary-button" type="submit">사진첩에 붙이기</button></div></form></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div><script src="./app.js"></script></body></html>
